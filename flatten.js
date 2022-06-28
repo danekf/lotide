@@ -1,4 +1,3 @@
-
 const arrayValidator = function(actual, expected) {
     
   //check each equivalent item, if any of them are not identical, return that result
@@ -28,4 +27,22 @@ const assertEqualArray = function(actual, expected) {
   }
 };
 
-assertEqualArray([1,2,3],[1,2,3] );
+const flatten = function (array){
+  let newArray = [];
+
+  for (let i = 0 ; i < array.length ; i++)
+    if(Array.isArray(array[i])){
+      for (let j = 0 ; j < array[i].length; j++){
+        newArray.push(array[i][j]);
+      }
+    }
+    else{
+      newArray.push(array[i])
+    }
+  
+  console.log(newArray);
+}
+
+
+
+flatten([1, 2, [3, 4], 5, [6]]) // => [1, 2, 3, 4, 5, 6]
