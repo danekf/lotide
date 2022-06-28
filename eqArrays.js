@@ -1,20 +1,26 @@
 
-const assertEqualArray = function(actual, expected) {
-  //check array length to see if they match, if they do compare them
-  //if they are not the same length, immediately go false
-  //this is used for each check case
-  actual.length === expected.length ? null : assertionResult(actual, expected, false); 
-  
+const arrayValidator = function(actual, expected) {
+    
+  //check each equivalent item, if any of them are not identical, return that result
   for (i = 0 ; i < actual.length ; i++){
-    actual[i] === expected[i] ? null : assertionResult(actual, expected, false);
-  }
-  assertionResult(actual, expected, true); //if all checks pass, report they are identical
+    if (actual[i] !== expected[i]){
+      return false;
+    }
+  }  
+  return true;
  
 };
 
 
 //prints result of equal test
-const assertionResult = function(actual, expected, result){
+const assertEqualArray = function(actual, expected){
+  let result = '';
+
+  //check array length to see if they match, if they do compare them
+  //if they are not the same length, immediately go false
+  //this is used for each check case
+  actual.length === expected.length ? result = arrayValidator(actual, expected) : result === false;
+  
   if (result) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   }
