@@ -28,4 +28,4 @@ const assertEqualArray = function(actual, expected) {
   }
 };
 
-assertEqualArray([1,2,3],[1,2,3] );
+assertEqualArray([1,2,3],[1,2,3]);

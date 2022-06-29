@@ -1,21 +1,20 @@
 //counts isntances of an item, within an object
-const countOnly = function(allItems, itemsToCount){
-  const countObj ={
+const countOnly = function(allItems, itemsToCount) {
+  const countObj = {
   };
 
-    //loop through each item in our allItems
-    for (let item of allItems) {
-      if(itemsToCount[item]){
-        if (!countObj[item]){
-          countObj[item] = 1;
-        }
-        else {
-          countObj[item] += 1;
-        }
-      }    
+  //loop through each item in our allItems
+  for (let item of allItems) {
+    if (itemsToCount[item]) {
+      if (!countObj[item]) {
+        countObj[item] = 1;
+      } else {
+        countObj[item] += 1;
+      }
     }
-    return countObj;
-}
+  }
+  return countObj;
+};
 
 //asserts that test is running as expected
 const assertEqual = function(actual, expected) {
