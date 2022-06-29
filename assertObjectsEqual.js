@@ -50,15 +50,17 @@ const eqObjects = function(object1, object2) {
   } else {
     result = false;
   }
- 
   return result; //return result of the test
 };
 
+const assertObjectsEqual = function(object1, object2) {
+  const inspect = require('util').inspect; 
+  eqObjects(object1, object2) ? console.log(`✅✅✅ Assertion Passed: ${inspect(object1)} === ${inspect(object1)}`) : console.log(`🛑🛑🛑 Assertion Failed: ${inspect(object1)} === ${inspect(object2)}`);  
+
+};
 
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
+assertObjectsEqual(cd, dc);
