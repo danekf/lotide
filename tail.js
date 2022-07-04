@@ -10,5 +10,4 @@ const tail = function(array) {
 //   return array[0];//return first value in the array given
 // };
 
-
 module.exports = tail;
