@@ -7,7 +7,9 @@ const middle = function(array) {
     return [];
   } else if (length % 2 !== 0) { //odd, return 1
     let midPoint = Math.floor(length / 2); //take length, divide by two and return the value at this point
-    return array[midPoint];
+    let newArray = [];
+    newArray.push(array[midPoint])
+    return newArray;
   } else {
     let midPoint = (length / 2) - 1; //even, return 2
     return array.slice(midPoint, midPoint + 2); //take 2 mid points
