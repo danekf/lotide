@@ -36,7 +36,7 @@ const map = (array, callback) => {
   }
   return results;
 
-}
+};
 
 
 const words = ["ground", "control", "to", "major", "tom"];

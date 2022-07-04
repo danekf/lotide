@@ -1,17 +1,16 @@
 const takeUntil = function(array, callback) {
   let newArray = []; //initialize new array to be returned
 
-  for (let item of array){ //look through each item of the array
-    if (callback(item)){ //if we hit the condition, return the array we have so far
+  for (let item of array) { //look through each item of the array
+    if (callback(item)) { //if we hit the condition, return the array we have so far
       return newArray;
-    }
-    else {
-      newArray.push(item); //add item to new array 
+    } else {
+      newArray.push(item); //add item to new array
     }
   }
 
   return newArray; //if we made it through every item without hitting the condition, return the array
-}
+};
 
 
 
